@@ -1,0 +1,1 @@
+var checkoutApp = angular.module("checkoutApp", [])
