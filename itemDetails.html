@@ -11,7 +11,18 @@
 
         <div id="mainContent">
             <h1>{{message}}</h1>
-
+            {{items.name}}
+        </div>
+        <div ng-repeat="item in items" id="itemsList">
+            <ul>
+                <li>
+                    <strong>name: {{item.name}}</strong>
+                    <br>
+                    <b>price:</b> {{item.price}}
+                    <br>
+                    <b>minimum age:</b> {{item.age}}
+                </li>
+            </ul>
         </div>
         
         <script src="https://code.angularjs.org/1.8.2/angular.js"></script>
