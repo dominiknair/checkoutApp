@@ -28,6 +28,13 @@
                 <br>
                 <label>Post Code</label>
                 <input type="textbox"ng-model="postCode" placeholder="Post code">
+                <br>
+                <br>
+                <label>URL of image</label>
+                <input type="textbox"ng-model="imgURL" placeholder="Image URL">
+                <br>
+                <br>
+                <img ng-show="imgURL" ng-src="{{imgURL}}" alt="image">
 
             </form>
         </div>

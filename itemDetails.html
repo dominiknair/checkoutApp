@@ -13,16 +13,39 @@
             <h1>{{message}}</h1>
             {{items.name}}
         </div>
-        <div ng-repeat="item in items" id="itemsList">
-            <ul>
-                <li>
-                    <strong>name: {{item.name}}</strong>
+
+
+        <label>Select what you would like to order by:</label>
+        <select ng-model="sortOrder">
+            <option value="name">Name</option>
+            <option value="upvoteCount">Upvotes</option>
+            <option value="age">Age</option>
+            <option value="price">price</option>
+        </select>
+
+
+
+
+
+        <div ng-repeat="item in items ">
+            <div id="itemsList">
+                <ul>
+                    <li>
+                        <strong>name: {{item.name}}</strong>
+                        <br>
+                        <b>price:</b> {{item.price}}
+                        <br>
+                        <b>minimum age:</b> {{item.age}}
+                    </li>
+                </ul>
+                <div style="padding-left: 10px;">
+                    <button ng-click="upVote(item)">Upvote</button>
                     <br>
-                    <b>price:</b> {{item.price}}
+                    votes: {{item.upvoteCount}}
                     <br>
-                    <b>minimum age:</b> {{item.age}}
-                </li>
-            </ul>
+                    <button ng-click="downVote(item)">Downvotes</button>
+                </div>
+            </div>
         </div>
         
         <script src="https://code.angularjs.org/1.8.2/angular.js"></script>
