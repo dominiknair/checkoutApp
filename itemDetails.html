@@ -11,42 +11,51 @@
 
         <div id="mainContent">
             <h1>{{message}}</h1>
-            {{items.name}}
         </div>
 
+        <div>
+            <label>Select what you would like to order by:</label>
+            <select ng-model="sortOrder">
+                <option value="name">Name</option>
+                <option value="-upvoteCount">Upvotes</option>
+                <option value="age">Age</option>
+                <option value="price">price</option>
+            </select>
+            <br>
+            <label>SelectThe age you want the results for:</label>
+            <select ng-model="ageFilter.age">
+                <option value=""> All</opttion>
+                <option value="1">Age: 1</option>
+                <option value="-2">Age: 2</option>
+                <option value="3">Age: 3</option>
+                <option value="4">Age: 4</option>
+                <option value="5">Age: 5</option>
+            </select>
 
-        <label>Select what you would like to order by:</label>
-        <select ng-model="sortOrder">
-            <option value="name">Name</option>
-            <option value="upvoteCount">Upvotes</option>
-            <option value="age">Age</option>
-            <option value="price">price</option>
-        </select>
 
-
-
-
-
-        <div ng-repeat="item in items ">
-            <div id="itemsList">
-                <ul>
-                    <li>
-                        <strong>name: {{item.name}}</strong>
+            <div ng-repeat="item in items | orderBy:sortOrder | filter: ageFilter">
+                <div id="itemsList">
+                    <ul>
+                        <li>
+                            <strong>name: {{item.name}}</strong>
+                            <br>
+                            <b>price:</b> {{item.price}}
+                            <br>
+                            <b>minimum age:</b> {{item.age}}
+                        </li>
+                    </ul>
+                    <div style="padding-left: 10px;">
+                        <button ng-click="upVote(item)">Upvote</button>
                         <br>
-                        <b>price:</b> {{item.price}}
+                        votes: {{item.upvoteCount}}
                         <br>
-                        <b>minimum age:</b> {{item.age}}
-                    </li>
-                </ul>
-                <div style="padding-left: 10px;">
-                    <button ng-click="upVote(item)">Upvote</button>
-                    <br>
-                    votes: {{item.upvoteCount}}
-                    <br>
-                    <button ng-click="downVote(item)">Downvotes</button>
+                        <button ng-click="downVote(item)">Downvotes</button>
+                    </div>
                 </div>
             </div>
         </div>
+
+        
         
         <script src="https://code.angularjs.org/1.8.2/angular.js"></script>
         <script src="js/app.js"></script>

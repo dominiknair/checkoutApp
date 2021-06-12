@@ -7,32 +7,32 @@ checkoutApp.controller("ItemDetailsController",
         //     name: "toy",
         //     price:55
         // }
-        $scope.items={
-            firstItem : {
+        $scope.items = [
+            {
                 name: "lego",
                 price: 10.99,
                 age: 4,
                 upvoteCount:0
             },
-            secondItem : {
+            {
                 name: "bouncy ball",
                 price: 4,
                 age:2,
                 upvoteCount:0
             },
-            thirdItem : {
+            {
                 name: "hotwheels car",
                 price: 2,
                 age:4,
                 upvoteCount:0
             },
-            fourthItem : {
+            {
                 name: "action man",
                 price: 15.99,
                 age:5,
                 upvoteCount:0
             }
-        }
+        ]
         $scope.upVote = function (item)
         {
             item.upvoteCount++;
