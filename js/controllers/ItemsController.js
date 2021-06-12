@@ -1,4 +1,8 @@
 checkoutApp.controller("ItemsController", 
     function ItemsController($scope){
-        $scope.message="hello";
-})
+        $scope.name
+        $scope.message="checkout";
+        $scope.items = {
+            itemName:
+        }
+});

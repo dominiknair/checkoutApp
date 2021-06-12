@@ -1,0 +1,40 @@
+<html ng-app="checkoutApp">
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body ng-controller="ItemsController">
+        <div class="topnav">
+            <a href="home.html">Home</a>
+            <a href="itemDetails.html">Item Details</a>
+            <a class="active" href="checkout.html">Checkout</a>
+
+          </div>
+        <div id="mainContent">
+            <h1>
+                {{message}}
+            </h1>
+            <form>
+                <label>Name</label>
+                <input type="textbox"ng-model="name" placeholder="Name">
+                <br>
+                <br>
+                <label>Surname</label>
+                <input type="textbox"ng-model="surname" placeholder="Surname">
+                <br>
+                <br>
+                <label>Address</label>
+                <input type="textbox"ng-model="address" placeholder="Address">
+                <br>
+                <br>
+                <label>Post Code</label>
+                <input type="textbox"ng-model="postCode" placeholder="Post code">
+
+            </form>
+        </div>
+        {{name}}
+        <script src="https://code.angularjs.org/1.8.2/angular.js"></script>
+        <script src="js/app.js"></script>
+        <script src="js/controllers/ItemsController.js"></script>
+        
+    </body>
+</html>
