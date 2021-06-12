@@ -1,8 +1,4 @@
-'use strict'
-
 checkoutApp.controller("ItemsController", 
-    function ItemsController($scope)
-    {
-        $scope.message="Checkout form";
-    }
-);
+    function ItemsController($scope){
+        $scope.message="hello";
+})
